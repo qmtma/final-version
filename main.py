@@ -610,7 +610,6 @@ def printRecipe(userProfile, item):
         else:
             print("you have Calorie deficit")
         reciepesNewCals.append(userCals)
-    print(reciepesNewCals)
     return totalCals, reciepesNewCals
     pass
 
