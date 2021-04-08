@@ -1,0 +1,1 @@
+{"48": {"Names": ["Teriyaki Marinade Recipe", "Rosemary Chicken Recipe", "Lemony Steamed Fish Recipe", "Rosemaries Italian Style Soup Recipe"], "Total Cals": "977.75", "average Caloris": "244.44", "Session Date": "2021-04-08"}}
