@@ -5,7 +5,6 @@ import json
 import ast
 import random
 import matplotlib.pyplot as plt
-import numpy as np
 
 Name = ""
 BMR = 0.0
@@ -15,7 +14,7 @@ file = open ("userinformation.txt", 'r')
 file.close()
 fileSize = os.path.getsize("userinformation.txt")
 if fileSize != 0 :
-    with open("userInformation.txt", "r") as userFileR:
+    with open("userinformation.txt", "r") as userFileR:
         allData = userFileR.read()
     allUsers = ast.literal_eval(allData)
     userFileR.close()
@@ -315,13 +314,14 @@ def createUser():
                         if field == allergyNo:
                             allergy = row[0]
                             allergies.append(allergy)
+                            print("allergic ingredient added")
             csvfile.close()
-            print("enter the ingredient number")
+            print("enter the ingredient number or enter -1 to exit ")
             allergyNo = input()
             if allergyNo == "-1":
                 break
     joinDate = currentDate
-    with open("userInformation.txt", "r") as userFile:
+    with open("userinformation.txt", "r") as userFile:
         allData = userFile.read()
         userFile.close()
     BMR = format(BMR, '.2f')
@@ -570,7 +570,7 @@ def generateReciepe(userProfile, Name):
                     RecipesFile.close()
 
 
-    else : 
+    else :
         print("No User Profile Loaded")
         userProfile, Name = validateUser(userProfile)
         generateReciepe(userProfile, Name)
@@ -610,6 +610,7 @@ def printRecipe(userProfile, item):
         else:
             print("you have Calorie deficit")
         reciepesNewCals.append(userCals)
+    print(reciepesNewCals)
     return totalCals, reciepesNewCals
     pass
 
@@ -694,7 +695,7 @@ while True:
             userProfile, Name = validateUser(userProfile)
         elif user_existing == "n" or user_existing == "N":
             userProfile = createUser()
-            with open("userInformation.txt", "r") as userFileR:
+            with open("userinformation.txt", "r") as userFileR:
                 allData = userFileR.read()
             allUsers = ast.literal_eval(allData)
             userFileR.close()
